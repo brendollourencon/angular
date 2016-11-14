@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" ng-app="helloWord">
 <head>
     <meta charset="UTF-8">
     <title>Hello Word</title>
 
     <script src="../js/angular.min.js"></script>
-    <script src="../js/app.js"></script>
+    <script src="../js/hellorWord.js"></script>
 </head>
-<body>
-
+<body ng-controller="helloWordController">
+    <!--Exibindo mensagem-->
+    {{message}}
 </body>
 </html>
