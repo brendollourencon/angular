@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR" ng-app="listaTelefonica">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista telefonica - Brendol L.</title>
+
+    <link rel="stylesheet" href="../libs/css/lista-telefonica.css">
+    <link rel="stylesheet" href="../libs/css/materialize.min.css">
+
+    <script src="../libs/js/materialize/jquery-3.1.1.min.js"></script>
+    <script src="../libs/js/angular.min.js"></script>
+    <script src="../libs/js/materialize/materialize.min.js"></script>
+    <script src="../libs/js/lista-telefonica.js"></script>
+
+</head>
+<body ng-controller="listaTelefonicaController">
+
+<div class="container">
+    <div class="row">
+        <h1 class="center-align">{{titulo}}</h1>
+
+    </div>
+
+    <div class="row" id="contatos">
+        <div class="col l12">
+            <h2>Contatos</h2>
+            <p>Contatos utilizando objetos em array</p>
+        </div>
+        <div class="col l12">
+            <table ng-if="contatos.length > 0">
+                <thead>
+                <tr>
+                    <th>Apagar</th>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>Operadora</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="contato in contatos" ng-class="{selecionado: contato.selecionado}">
+                    <td>
+                        <input type="checkbox" id="{{contato.nome}}" ng-model="contato.selecionado">
+                        <label for="{{contato.nome}}"></label>
+                    </td>
+                    <td></td>
+                    <td>{{contato.nome}}</td>
+                    <td>{{contato.telefone}}</td>
+                    <td>{{contato.operadora.nome}}</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <button class="waves-effect waves-light btn red" ng-show="verificaSelecionado(contatos)" ng-click="apagarContatos(contatos)">
+                Apagar contatos
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col l12">
+            <div class="row">
+                <h3>Form Contatos</h3>
+            </div>
+            <div class="row">
+                <input type="text" placeholder="Nome" ng-model="novoContato.nome">
+                <br>
+                <input type="text" placeholder="Telefone" ng-model="novoContato.telefone">
+                <br>
+                <select class="browser-default" ng-model="novoContato.operadora" ng-options="operadora.nome group by operadora.categoria for operadora in operadoras">
+                    <option value="">Selecione uma operadora</option>
+                </select>
+                <br>
+                <button class="waves-effect waves-light btn" ng-disabled="!novoContato.nome || !novoContato.telefone" ng-click="adicionarContatos(novoContato)">Adicionar novo
+                    contato
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row" id="clientes">
+        <div class="col l12">
+            <h2>Clientes</h2>
+            <p>Contatos utilizando apenas array</p>
+        </div>
+        <div class="col l12">
+            <table>
+                <thead>
+                <tr>
+                    <td>Identificador</td>
+                    <td>Nome</td>
+                    <td>Profissão</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="cliente in clientes">
+                    <td></td>
+                    <td>{{cliente[0]}}</td>
+                    <td>{{cliente[1]}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="row">
+            <div class="col l12">
+                <div class="row">
+                    <h3>Adicionar Clientes</h3>
+                </div>
+                <div class="row">
+                    <input type="text" placeholder="Nome" ng-model="novoCliente[0]">
+                    <br>
+                    <input type="text" placeholder="Profissão" ng-model="novoCliente[1]">
+                    <button class="waves-effect waves-light btn" ng-click="adicionarClientes(novoCliente)">Adicionar clientes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<footer ng-include="'footer.html'"></footer>
+
+
+</body>
+</html>

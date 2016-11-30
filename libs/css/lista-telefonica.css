@@ -1,0 +1,12 @@
+h1{
+    font-size: 1.87rem;
+}
+h2{
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+h3{
+    font-size: 1.2rem !important;
+    font-weight: bold !important;
+}
+.selecionado{background-color: #ffeb3b;}

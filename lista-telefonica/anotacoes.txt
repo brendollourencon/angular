@@ -1,0 +1,29 @@
+Diretivas: são extensões em html que permite novos comportamentos no mesmo.
+
+ng-app: permite definir froneiras da aplicação
+ng-controller: vincolo entre view e controller
+$scope: é que faz a ponte entre view e controller
+ng-bind: substitui o elemento por uma expressão ou {{}}
+ng-repeat: desmificar arrays
+ng-model: vincula um valor da view para $scope (mais ou menos o que fazemos com name e POST)
+ng-click: dispara um evento ao clicar
+ng-disabled: desabilita um elemento conforme uma condição
+ng-options: renderiza opções de um select(input), só pega se tiver um ng-model
+ng-show: condição para aparecer ou esconder objetos (permanece na dom)
+ng-hide: condição para aparecer ou esconder objetos (permanece na dom)
+ng-if: condição para aparecer ou esconder algo.
+ng-include: para incluir arquivos externos (funciona igual do php)
+
+
+*****
+Formas de utilizar ng-option
+    Simples
+        ng-options="operadora.nome for operadora in operadoras" (passando apenas o que vai passar no valor do select)
+    Definindo value
+        ng-options="operadora.codigo as operadora.nome for operadora in operadoras" (passando o que vai ser mandado para o scope, o que o value vai receber)
+    Categorizando
+        ng-options="operadora.nome group by operadora.categoria for operadora in operadoras" (separando os options por categoria)
+***
+
+
+* Evitar ler scope dentro das controllers, pois fica dificil de compreender
