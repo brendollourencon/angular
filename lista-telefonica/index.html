@@ -51,7 +51,8 @@
                 </tbody>
             </table>
 
-            <button class="waves-effect waves-light btn red" ng-show="verificaSelecionado(contatos)" ng-click="apagarContatos(contatos)">
+            <button class="waves-effect waves-light btn red" ng-show="verificaSelecionado(contatos)"
+                    ng-click="apagarContatos(contatos)">
                 Apagar contatos
             </button>
         </div>
@@ -62,15 +63,19 @@
                 <h3>Form Contatos</h3>
             </div>
             <div class="row">
-                <input type="text" placeholder="Nome" ng-model="novoContato.nome">
-                <br>
-                <input type="text" placeholder="Telefone" ng-model="novoContato.telefone">
-                <br>
-                <select class="browser-default" ng-model="novoContato.operadora" ng-options="operadora.nome group by operadora.categoria for operadora in operadoras">
-                    <option value="">Selecione uma operadora</option>
-                </select>
-                <br>
-                <button class="waves-effect waves-light btn" ng-disabled="!novoContato.nome || !novoContato.telefone" ng-click="adicionarContatos(novoContato)">Adicionar novo
+                <form name="FormularioContato">
+                    <input type="text" placeholder="Nome" ng-model="novoContato.nome">
+                    <br>
+                    <input type="text" placeholder="Telefone" ng-model="novoContato.telefone">
+                    <br>
+                    <select class="browser-default" ng-model="novoContato.operadora"
+                            ng-options="operadora.nome group by operadora.categoria for operadora in operadoras">
+                        <option value="">Selecione uma operadora</option>
+                    </select>
+                    <br>
+                </form>
+                <button class="waves-effect waves-light btn" ng-disabled="!novoContato.nome || !novoContato.telefone"
+                        ng-click="adicionarContatos(novoContato)">Adicionar novo
                     contato
                 </button>
             </div>
@@ -111,7 +116,9 @@
                     <input type="text" placeholder="Nome" ng-model="novoCliente[0]">
                     <br>
                     <input type="text" placeholder="Profissão" ng-model="novoCliente[1]">
-                    <button class="waves-effect waves-light btn" ng-click="adicionarClientes(novoCliente)">Adicionar clientes</button>
+                    <button class="waves-effect waves-light btn" ng-click="adicionarClientes(novoCliente)">Adicionar
+                        clientes
+                    </button>
                 </div>
             </div>
         </div>
