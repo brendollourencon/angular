@@ -14,6 +14,10 @@ ng-hide: condição para aparecer ou esconder objetos (permanece na dom)
 ng-if: condição para aparecer ou esconder algo.
 ng-include: para incluir arquivos externos (funciona igual do php)
 
+NomedoFormulario.$dirty: verifica se o formulario ja foi tocado alguma vez. (já foi tocado).
+NomedoFormulario.$pristine: verifica se o formulario ja foi tocado alguma vez. (nunca foi tocado)
+setPristine: seta o formulario para seu estado pristine
+
 
 *****
 Formas de utilizar ng-option

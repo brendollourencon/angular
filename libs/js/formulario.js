@@ -1,10 +1,13 @@
-angular.module("formulario",[]);
+angular.module("clienteApp",[]);
 
-angular.module("formulario").controller("validacao",function($scope){
+angular.module("clienteApp").controller("clienteController", function ($scope) {
 
-    $scope.clientes = [
 
-    ]
+    $scope.validaFormulario = function (cliente) {
+
+
+
+    }
 
 
 });

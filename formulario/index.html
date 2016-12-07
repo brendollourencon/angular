@@ -1,40 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="pt-Br" ng-app="clienteApp">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Formulario</title>
 
     <link rel="stylesheet" href="../libs/css/materialize.min.css">
+    <link rel="stylesheet" href="../libs/css/formulario.css">
+
     <script src="../libs/js/angular.min.js"></script>
     <script src="../libs/js/formulario.js"></script>
+    <script src="../libs/js/materialize/jquery-3.1.1.min.js"></script>
+    <script src="../libs/js/materialize/materialize.min.js"></script>
 
 </head>
 <body>
 
 <div class="container">
-    <h1 class="center-align">Cadastro de clientes</h1>
+    <div class="row">
+        <h1>Cadastro de clientes</h1>
+    </div>
+
     <div class="row">
         <div class="col l12">
-            <form action="">
+            <form name="formularioCliente">
                 <div class="row">
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" placeholder="Nome">
-                </div>
-                <div class="row">
-                    <label for="idade">Idade:</label>
-                    <input type="text" id="idade" placeholder="Idade">
-                </div>
-                <div class="row">
-                    <label for="profissao">Profissão:</label>
-                    <input type="text" id="profissao" placeholder="Profissão">
+                    <span class="errors" ng-show="formularioCliente.nome.$error.required && formularioCliente.$dirty">Campo nome é obrigátorio</span>
+                    <span class="errors" ng-show="formularioCliente.telefone.$error.pattern">Telefone incorreto</span>
                 </div>
 
                 <div class="row">
-                    <button class="right">Cadastrar</button>
+                    <label for="nome">Nome</label>
+                    <input type="text" ng-model="cliente.nome" name="nome" placeholder="Nome" ng-required="true">
                 </div>
+
+                <div class="row">
+                    <label for="">CPF</label>
+                    <input type="text" ng-model="cliente.cpf" name="cpf" placeholder="CPF" ng-required="true">
+                </div>
+                <div class="row">
+                    <label for="">Telefone</label>
+                    <input type="text" ng-model="cliente.telefone" name="telefone" placeholder="(99)99999-9999" ng-pattern="/^\(\d{2}\)\d{4,5}-\d{4}$/">
+                </div>
+                <div class="row">
+                    <label for="profissao"> Profissão</label>
+                    <input type="text" ng-model="cliente.profissao" name="profissao" placeholder="Profissão">
+                </div>
+
+                <div class="row">
+                    <button class="waves-effect waves-light btn" ng-disabled="formularioCliente.$invalid">Cadastrar</button>
+                </div>
+
             </form>
         </div>
     </div>
+
 </div>
 
 
