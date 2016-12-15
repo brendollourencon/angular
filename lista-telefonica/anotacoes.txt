@@ -19,6 +19,13 @@ NomedoFormulario.$pristine: verifica se o formulario ja foi tocado alguma vez. (
 setPristine: seta o formulario para seu estado pristine
 
 
+Filtros
+    | uppercase - maiuscula
+    | lowercase - minuscula
+
+
+
+
 *****
 Formas de utilizar ng-option
     Simples

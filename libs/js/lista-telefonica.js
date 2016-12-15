@@ -9,9 +9,9 @@ angular.module("listaTelefonica").controller("listaTelefonicaController",functio
 
     // conjunto de contatos em objetos
     $scope.contatos = [
-        {nome:"Brendol", telefone: "9999-8888"},
-        {nome:"Maria", telefone: "1234-5678"},
-        {nome: "Ana", telefone: "4321-9876"}
+        {nome:"Brendol", telefone: "9999-8888" , date: new Date(), valor: 10},
+        {nome:"Maria", telefone: "1234-5678" , date: new Date(), valor: 30},
+        {nome: "Ana", telefone: "4321-9876" , date: new Date(), valor: 40}
     ];
 
     $scope.operadoras = [
@@ -64,5 +64,15 @@ angular.module("listaTelefonica").controller("listaTelefonicaController",functio
             return contato.selecionado;
         });
     }
+
+    $scope.ordenar = 'nome';
+    $scope.reverso = true;
+    
+    $scope.sortBy = function (ordenar) {
+        $scope.ordenar = ordenar;
+
+        $scope.reverso = ($scope.ordenar == ordenar) ? !$scope.reverso : false;
+    }
+
 
 });
