@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="../libs/css/materialize.min.css">
+
+    <script src="../libs/js/angular.min.js"></script>
+    <script src="../libs/js/ajax.js"></script>
+    <script src="../libs/js/materialize/jquery-3.1.1.min.js"></script>
+    <script src="../libs/js/materialize/materialize.min.js"></script>
+</head>
+<body ng-app="ajaxApp">
+
+<div class="container" ng-controller="ajaxController">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Telefone</th>
+            <th>Telefone</th>
+        </tr>
+        </thead>
+        <tr ng-repeat="cliente in clientes">
+            <td>{{cliente.id}}</td>
+            <td>{{cliente.nome}}</td>
+            <td>{{cliente.telefone}}</td>
+        </tr>
+    </table>
+
+
+</div>
+
+</body>
+</html>
