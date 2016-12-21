@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Serviços</title>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+
+    <script src="lib/jquery-3.1.1.min.js"></script>
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/services/dadosClientes.js"></script>
+    <script src="js/controllers/agendaController.js"></script>
+
+
+</head>
+<body ng-app="exemploServicos">
+<div class="container" ng-controller="agendaController">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Telefone</th>
+            <th>Data de Cadastro</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="cliente in listaClientes">
+            <td>{{cliente.id}}</td>
+            <td>{{cliente.nome}}</td>
+            <td>{{cliente.telefone}}</td>
+            <td>{{cliente.data_cadastro | date: "dd/MM/y"}}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div class="row">
+
+        <div class="col-md-12">
+
+            <div class="row">
+                <h1>Adicionar novo cliente</h1>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <form name="formCliente">
+                        <div class="row">
+                            <label for="nome">Nome</label>
+                            <input type="text" class="form-control" ng-required="true" ng-model="cliente.nome" placeholder="Nome do cliente">
+                        </div>
+
+                        <div class="row">
+                            <label for="">Telefone</label>
+                            <input type="text" class="form-control" ng-required="true" ng-model="cliente.telefone" placeholder="Telefone ex (16)99999-9999">
+                        </div>
+
+                        <div class="row">
+                            <label for="">Data de cadastro</label>
+                            <input type="text" class="form-control" ng-required="true" placeholder="Data de cadastro" ng-model="cliente.data_cadastro">
+                        </div>
+                        <br><br>
+                        <div class="row">
+                            <button type="button" class="btn btn-primary form" ng-click="adicionaCliente(cliente)" ng-disabled="formCliente.$invalid">Cadastrar novo cliente</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+</body>
+</html>

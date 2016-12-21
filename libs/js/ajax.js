@@ -19,7 +19,7 @@ app.controller("ajaxController", function ($scope, $http) {
 
         $http.post("http://localhost/angular/angular/ajax/insere-dados.php", dados).success(function (data) {
             console.log(data);
-            dadosClientes();
+             dadosClientes();
         });
 
     }
