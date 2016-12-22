@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="testeDirevitas">
+<head>
+    <meta charset="UTF-8">
+    <title>Diretivas</title>
+
+    <link rel="stylesheet" href="../libs/css/materialize.min.css">
+    <style>
+
+        .cartao-visita img{
+            max-height: 150px;
+            width: 100%;
+        }
+        .cartao-visita .titulo{
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .cartao-visita .descricao{
+            font-size: 14px;
+            color: #333;
+        }
+
+    </style>
+
+    <script src="../libs/js/angular.min.js"></script>
+    <script src="controllers/testeDiretivas.js"></script>
+    <script src="diretivas/cartaoVisita.js"></script>
+</head>
+<body ng-controller="diretivasController">
+
+
+<div class="row">
+    <div class="col l10 offset-l2">
+        <cartao-visita img="view/img/natal.jpg" titulo="Feliz Natal!">
+            O Natal é uma data muito especial no calendário cristão. Representa o nascimento de Jesus Cristo, o
+            Salvador.
+            Comemora-se esta data todo dia 25 de dezembro de cada ano.
+        </cartao-visita>
+        <cartao-visita img="view/img/anonovo.jpg" titulo="Um próspero ano novo">
+            Ano-novo[1] ou ano-bom[1][2] é o momento em que um novo ano civil começa e quando um novo calendário anual é
+            iniciado. Em muitas culturas ao redor do mundo, o evento é comemorado de alguma maneira, principalmente na
+            véspera da data.
+        </cartao-visita>
+    </div>
+</div>
+
+</body>
+</html>
