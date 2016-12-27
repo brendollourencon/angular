@@ -1,7 +1,4 @@
 angular.module("testeDirevitas").directive("cartaoVisita", function () {
-
-
-
     return {
         templateUrl: "view/cartao-visita.html",
         scope: {
@@ -11,6 +8,4 @@ angular.module("testeDirevitas").directive("cartaoVisita", function () {
         replace: true,
         transclude: true
     }
-
-
 });
