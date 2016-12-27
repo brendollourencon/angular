@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="testeDirevitas">
+<head>
+    <meta charset="UTF-8">
+    <title>Diretiva link</title>
+
+
+    <script src="../libs/js/angular.min.js"></script>
+    <script src="controllers/testeDiretivas.js"></script>
+    <script src="diretivas/link.js"></script>
+</head>
+<body ng-controller="diretivasController">
+<form name="formLink">
+    <input type="text" name="data" ng-model="diretiva.data" diretiva-link class="teste">
+    <button>Ver</button>
+</form>
+
+</body>
+</html>

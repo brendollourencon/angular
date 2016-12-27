@@ -36,5 +36,25 @@ Formas de utilizar ng-option
         ng-options="operadora.nome group by operadora.categoria for operadora in operadoras" (separando os options por categoria)
 ***
 
-
 * Evitar ler scope dentro das controllers, pois fica dificil de compreender
+
+****
+Diretivas
+    template: escrever o que deseja aparecer na diretiva, modo inline
+    templateUrl: seta um caminho para escrever htmls para sua diretiva
+    scope: São os parametros e reescrita do html dentro do caminho da diretiva
+    replace: se true retira div pai criada automaticamente
+    transclude: permitir conteudo dentro das tags da diretiva
+
+        Link: propriedade que renderiza apos o load da pagina
+            scope: isolar o scopo dentro da propriedade link
+            element: disponibiliza propriedades jquery lite atraves de um certo elemento
+            attrs: diponibiliza os atributos do input utilizado
+            ctrl: pega dados do require do link, se for um ngModel por exemplo, sera capaz de pegar
+        o que está sendo digitado.
+            require: capaz de interagir com outras apis do angular, como ngModel por exemplo.
+
+
+
+
+
