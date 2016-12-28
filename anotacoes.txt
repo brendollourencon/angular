@@ -50,9 +50,12 @@ Diretivas
             scope: isolar o scopo dentro da propriedade link
             element: disponibiliza propriedades jquery lite atraves de um certo elemento
             attrs: diponibiliza os atributos do input utilizado
+            require: capaz de interagir com outras apis do angular, como ngModel por exemplo.
             ctrl: pega dados do require do link, se for um ngModel por exemplo, sera capaz de pegar
         o que está sendo digitado.
-            require: capaz de interagir com outras apis do angular, como ngModel por exemplo.
+                ctrl.$viewValue: pega entrada do input utilziado
+                ctrl.$setViewValue(valor): seta um valor para uma entrada
+                ctrl.render(): renderiza na view;
 
 
 

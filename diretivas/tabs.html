@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="testeDirevitas">
+<head>
+    <meta charset="UTF-8">
+    <title>Diretiva Tabs</title>
+
+
+    <style>
+        .container {
+            width: 1024px;
+            margin: 0 auto;
+        }
+
+        .titulo {
+            background-color: #00acc1;
+            padding: 10px 0;
+            cursor: pointer;
+        }
+
+        .descricao {
+            background-color: #f0f0f0;
+            padding: 20px 0;
+        }
+
+        .tabs {
+            margin-bottom: 10px;
+            display: block;
+        }
+    </style>
+
+    <script src="../libs/js/angular.min.js"></script>
+    <script src="controllers/testeDiretivas.js"></script>
+    <script src="diretivas/tabs.js"></script>
+</head>
+<body ng-controller="diretivasController">
+
+<div class="container">
+    <percorre>
+        <tab-diretiva titulo="Titulo de teste" class="tabs">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus consequuntur deserunt earum eius
+            explicabo facere, id impedit laudantium modi molestiae molestias, nesciunt nobis quas quasi quia quibusdam
+            reprehenderit tempore tenetur!
+        </tab-diretiva>
+        <tab-diretiva titulo="Titulo de teste 2" class="tabs">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus consequuntur deserunt earum eius
+            explicabo facere, id impedit laudantium modi molestiae molestias, nesciunt nobis quas quasi quia quibusdam
+            reprehenderit tempore tenetur!
+        </tab-diretiva>
+        <tab-diretiva titulo="Titulo de teste 2" class="tabs">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus consequuntur deserunt earum eius
+            explicabo facere, id impedit laudantium modi molestiae molestias, nesciunt nobis quas quasi quia quibusdam
+            reprehenderit tempore tenetur!
+        </tab-diretiva>
+    </percorre>
+</div>
+
+
+</body>
+</html>
